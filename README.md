@@ -1,4 +1,4 @@
-# AndoCPM
+# AndoCPM & Trang CPM
 --------------
 ## Cách sử dụng - Termux
 ```
