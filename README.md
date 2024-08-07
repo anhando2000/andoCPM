@@ -5,7 +5,7 @@
 git clone https://github.com/anhando2000/andoCPM.git
 ```
 ```
-cd andocpm
+cd andoCPM
 ```
 ```
 pip install -r requirements.txt
