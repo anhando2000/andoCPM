@@ -5,7 +5,7 @@
 git clone https://github.com/anhando2000/andoCPM.git
 ```
 ```
-cd CPMNuker
+cd andocpm
 ```
 ```
 pip install -r requirements.txt
