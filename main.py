@@ -1,4 +1,4 @@
-﻿#!/usr/bin/python
+#!/usr/bin/python
 
 # Copyright (C) Anasov <me@anasov.ly> - All Rights Reserved
 # Unauthorized copying of this file, via any medium is strictly prohibited
@@ -52,10 +52,10 @@ def banner(console):
     ]
     colorful_text = gradient_text(brand_name, colors)
     console.print(colorful_text)
-    console.print("[bold red]👑 Ấn Độ[/bold red]: [bold yellow]Trải nghiệm cuộc sống và đam mê[/bold yellow]")
-    console.print(f"[bold red]👑 Zalo[/bold red]: [bold green]0335374215[/bold green] or [bold green]FB: Nguyễn Huỳnh Vũ[/bold green]")
+    console.print("[bold red]👑 CPMCANETOOL[/bold red]: [bold yellow]Trải nghiệm cuộc sống và đam mê[/bold yellow]")
+    console.print(f"[bold red]👑 CPMCANETOOL[/bold red]: [bold green]0335374215[/bold green] or [bold green]FB: CANE CPM[/bold green]")
     console.print("[bold red]==================================================[/bold red]")
-    console.print("[bold yellow]! Lưu ý[/bold yellow]: Đăng xuất khỏi CPM trước khi sử dụng công cụ này !", end="\n\n")
+    console.print("[bold yellow]! Note[/bold yellow]: Sign out of CPM before using this tool !", end="\n\n")
 
 def load_player_data(cpm):
     response = cpm.get_player_data()
@@ -109,68 +109,68 @@ if __name__ == "__main__":
     signal.signal(signal.SIGINT, signal_handler)
     while True:
         banner(console)
-        acc_email = prompt_valid_value("[bold]👑 Tài Khoản Gmail[/bold]", "Email", password=False)
-        acc_password = prompt_valid_value("[bold]👑 Mật Khẩu[/bold]", "Password", password=False)
-        acc_access_key = prompt_valid_value("[bold]👑 Chìa Khóa[/bold]", "Access Key", password=False)
-        console.print("[bold cyan]👑 Đợi Kiểm Tra[/bold cyan]: ", end=None)
+        acc_email = prompt_valid_value("[bold]👑 Account Gmail[/bold]", "Email", password=False)
+        acc_password = prompt_valid_value("[bold]👑 Password[/bold]", "Password", password=False)
+        acc_access_key = prompt_valid_value("[bold]👑 Lock[/bold]", "Access Key", password=False)
+        console.print("[bold cyan]👑 Waiting for Check[/bold cyan]: ", end=None)
         cpm = andoCPM(acc_access_key)
         login_response = cpm.login(acc_email, acc_password)
         if login_response != 0:
             if login_response == 100:
-                console.print("[bold red]⛔ TÀI KHOẢN KHÔNG ĐƯỢC TÌM THẤY[/bold red].")
+                console.print("[bold red]⛔ ACCOUNT NOT FOUND[/bold red].")
                 sleep(2)
                 continue
             elif login_response == 101:
-                console.print("[bold red]⛔ SAI MẬT KHẨU[/bold red].")
+                console.print("[bold red]⛔ WRONG PASSWORD[/bold red].")
                 sleep(2)
                 continue
             elif login_response == 103:
-                console.print("[bold red]⛔ KẾT NỐI CHÌA KHÓA THẤT BẠI[/bold red].")
+                console.print("[bold red]⛔ KEY CONNECTION FAILED[/bold red].")
                 sleep(2)
                 continue
             else:
-                console.print("[bold red]⛔ THỬ LẠI[/bold red].")
-                console.print("[bold yellow]⛔ LƯU Ý[/bold yellow]: hãy chắc chắn rằng bạn đã điền vào ?/")
+                console.print("[bold red]⛔ RETRY[/bold red].")
+                console.print("[bold yellow]⛔ NOTE[/bold yellow]: Please make sure you have filled it out ?/")
                 sleep(2)
                 continue
         else:
-            console.print("[bold green]🎀THÀNH CÔNG [/bold green].")
+            console.print("[bold green]🎀SUCCESS [/bold green].")
             sleep(2)
         while True:
             banner(console)
             load_player_data(cpm)
             load_key_data(cpm)
             choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22"]
-            console.print("[bold red](01):[/bold red][bold green]Tiền[/bold green]")
-            console.print("[bold red](02):[/bold red][bold green]Xu Vàng[/bold green]")
-            console.print("[bold red](03):[/bold red][bold green]Hạng Vua / Rank King[/bold green]")
-            console.print("[bold red](04):[/bold red][bold green]Chỉnh Sửa ID[/bold green]")
-            console.print("[bold red](05):[/bold red][bold green]Chỉnh Sửa Tên[/bold green]")
-            console.print("[bold red](06):[/bold red][bold green]Chỉnh Sửa Tên Màu Rainbow[/bold green]")
-            console.print("[bold red](07):[/bold red][bold green]Biển Số[/bold green]")
-            console.print("[bold red](08):[/bold red][bold green]Xóa Tài Khoản[/bold green]")
-            console.print("[bold red](09):[/bold red][bold green]Tạo Tài Khoản[/bold green]")
-            console.print("[bold red](10):[/bold red][bold green]Xóa Bạn Bè[/bold green]")
-            console.print("[bold red](11):[/bold red][bold green]Unlock Xe Trả Tiền[/bold green]")
-            console.print("[bold red](12):[/bold red][bold green]Unlock Tất Cả Xe[/bold green]")
-            console.print("[bold red](13):[/bold red][bold green]Unlock Xe Cảnh Sát[/bold green]")
+            console.print("[bold red](01):[/bold red][bold green]Money[/bold green]")
+            console.print("[bold red](02):[/bold red][bold green]Gold Coins[/bold green]")
+            console.print("[bold red](03):[/bold red][bold green]King Class / Rank King[/bold green]")
+            console.print("[bold red](04):[/bold red][bold green]Change ID[/bold green]")
+            console.print("[bold red](05):[/bold red][bold green]Edit Name[/bold green]")
+            console.print("[bold red](06):[/bold red][bold green]Edit Color Name Rainbow[/bold green]")
+            console.print("[bold red](07):[/bold red][bold green]License plate[/bold green]")
+            console.print("[bold red](08):[/bold red][bold green]Delete the account[/bold green]")
+            console.print("[bold red](09):[/bold red][bold green]Create Account[/bold green]")
+            console.print("[bold red](10):[/bold red][bold green]Delete Friends[/bold green]")
+            console.print("[bold red](11):[/bold red][bold green]Unlock Car Paid[/bold green]")
+            console.print("[bold red](12):[/bold red][bold green]Unlock All Vehicles[/bold green]")
+            console.print("[bold red](13):[/bold red][bold green]Unlock Police Car[/bold green]")
             console.print("[bold red](14):[/bold red][bold green]Unlock W16[/bold green]")
-            console.print("[bold red](15):[/bold red][bold green]Unlock Còi[/bold green]")
-            console.print("[bold red](16):[/bold red][bold green]Không Hư Hỏng[/bold green]")
-            console.print("[bold red](17):[/bold red][bold green]Vô Hạn Xăng[/bold green]")
-            console.print("[bold red](18):[/bold red][bold green]Nhà 3[/bold green]")
-            console.print("[bold red](19):[/bold red][bold green]UNLOCK Khói[/bold green]")
-            console.print("[bold red](20):[/bold red][bold green]Chỉnh Sửa Win[/bold green]")
-            console.print("[bold red](21):[/bold red][bold green]Chỉnh Sửa Loese[/bold green]")
-            console.print("[bold red](22):[/bold red][bold green]Sao Chép Tài Khoản[/bold green]")
-            console.print("[bold red](0):[/bold red][bold green]Thoát[/bold green]", end="\n\n")
-            service = IntPrompt.ask(f"[bold]🎀 Chọn một dịch vụ [red][1-{choices[-1]} or 0][/red][/bold]", choices=choices, show_choices=False)
+            console.print("[bold red](15):[/bold red][bold green]Unlock Whistle[/bold green]")
+            console.print("[bold red](16):[/bold red][bold green]No Damage Car[/bold green]")
+            console.print("[bold red](17):[/bold red][bold green]Unlimited Fuel[/bold green]")
+            console.print("[bold red](18):[/bold red][bold green]Unlock Home 3[/bold green]")
+            console.print("[bold red](19):[/bold red][bold green]Unlock Smoke[/bold green]")
+            console.print("[bold red](20):[/bold red][bold green]Edit Win[/bold green]")
+            console.print("[bold red](21):[/bold red][bold green]Edit Loese[/bold green]")
+            console.print("[bold red](22):[/bold red][bold green]Copy Account[/bold green]")
+            console.print("[bold red](0):[/bold red][bold green]Exit[/bold green]", end="\n\n")
+            service = IntPrompt.ask(f"[bold]🎀 Choose a service [red][1-{choices[-1]} or 0][/red][/bold]", choices=choices, show_choices=False)
             if service == 0: # Exit
-                console.print(f"[bold yellow]🎀 Cảm ơn bạn đã sử dụng công cụ của chúng tôi [/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
+                console.print(f"[bold yellow]🎀 Thank you for using our tool [/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
             elif service == 1: # Increase Money
-                console.print("[bold cyan]🎀 Chèn bao nhiêu tiền bạn muốn[/bold cyan]")
-                amount = IntPrompt.ask("[bold]🎀 Số lượng[/bold]")
-                console.print("[bold cyan]🎀 Đang lưu dữ liệu của bạn[/bold cyan]: ", end=None)
+                console.print("[bold cyan]🎀 Insert how much money you want[/bold cyan]")
+                amount = IntPrompt.ask("[bold]🎀 Quantity[/bold]")
+                console.print("[bold cyan]🎀 Saving your data[/bold cyan]: ", end=None)
                 if amount > 0 and amount <= 50000000:
                     if cpm.set_player_money(amount):
                         console.print("[bold green]🎀THÀNH CÔNG[/bold green]")
@@ -318,210 +318,4 @@ if __name__ == "__main__":
                 status = cpm.register(acc2_email, acc2_password)
                 if status == 0:
                     console.print("[bold green]🎀THÀNH CÔNG [/bold green]")
-                    console.print("==================================")
-                    console.print(f"[bold red]! Hello[/bold red]: Để tweak tài khoản này bằng AndoCPM")
-                    console.print("Hầu hết bạn đăng nhập vào trò chơi bằng tài khoản này")
-                    sleep(2)
-                    continue
-                elif status == 105:
-                    console.print("[bold red]⛔ LỖI.[/bold red]")
-                    console.print("[bold yellow][!] Email này đã tồn tại ![/bold yellow]")
-                    sleep(2)
-                    continue
-                else:
-                    console.print("[bold red]⛔ LỖI.[/bold red]")
-                    console.print("[bold yellow]⛔ Vui lòng thử lại[/bold yellow]")
-                    sleep(2)
-                    continue
-            elif service == 10: # Delete Friends
-                console.print("[bold cyan][%] Xóa bạn bè của bạn[/bold cyan]: ", end=None)
-                if cpm.delete_player_friends():
-                    console.print("[bold green]🎀THÀNH CÔNG [/bold green]")
-                    console.print("==================================")
-                    answ = Prompt.ask("[bold cyan]⛔ Bạn có muốn thoát không ?[/bold cyan]", choices=["y", "n"], default="n")
-                    if answ == "y": console.print(f"[bold yellow]🎀 Cảm ơn bạn đã sử dụng công cụ của chúng tôi[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
-                    else: continue
-                else:
-                    console.print("[bold red]⛔ LỖI.[/bold red]")
-                    console.print("[bold yellow]⛔ Vui lòng thử lại[/bold yellow]")
-                    sleep(2)
-                    continue
-            elif service == 11: # Unlock All Paid Cars
-                console.print("[bold yellow]! Hello[/bold yellow]: Chức năng này mất một lúc để hoàn thành, vui lòng không hủy.", end=None)
-                console.print("[bold cyan][%] Mở khóa tất cả ô tô trả phí[/bold cyan]: ", end=None)
-                if cpm.unlock_paid_cars():
-                    console.print("[bold green]🎀THÀNH CÔNG [/bold green]")
-                    console.print("==================================")
-                    answ = Prompt.ask("[bold cyan]⛔ Bạn có muốn thoát không ?[/bold cyan]", choices=["y", "n"], default="n")
-                    if answ == "y": console.print(f"[bold yellow]🎀 Cảm ơn bạn đã sử dụng công cụ của chúng tôi[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
-                    else: continue
-                else:
-                    console.print("[bold red]⛔ LỖI.[/bold red]")
-                    console.print("[bold yellow]⛔ Vui lòng thử lại[/bold yellow]")
-                    sleep(2)
-                    continue
-            elif service == 12: # Unlock All Cars
-                console.print("[bold cyan][%] Unlocking All Cars[/bold cyan]: ", end=None)
-                if cpm.unlock_all_cars():
-                    console.print("[bold green]🎀THÀNH CÔNG [/bold green]")
-                    console.print("==================================")
-                    answ = Prompt.ask("[bold cyan]⛔ Bạn có muốn thoát không ?[/bold cyan]", choices=["y", "n"], default="n")
-                    if answ == "y": console.print(f"[bold yellow]🎀 Cảm ơn bạn đã sử dụng công cụ của chúng tôi[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
-                    else: continue
-                else:
-                    console.print("[bold red]⛔ LỖI.[/bold red]")
-                    console.print("[bold yellow]⛔ Vui lòng thử lại[/bold yellow]")
-                    sleep(2)
-                    continue
-            elif service == 13: # Unlock All Cars Siren
-                console.print("[bold cyan][%] Mở khóa tất cả xe ô tô cảnh sát[/bold cyan]: ", end=None)
-                if cpm.unlock_all_cars_siren():
-                    console.print("[bold green]🎀THÀNH CÔNG [/bold green]")
-                    console.print("==================================")
-                    answ = Prompt.ask("[bold cyan]⛔ Bạn có muốn thoát không ?[/bold cyan]", choices=["y", "n"], default="n")
-                    if answ == "y": console.print(f"[bold yellow]🎀 Cảm ơn bạn đã sử dụng công cụ của chúng tôi[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
-                    else: continue
-                else:
-                    console.print("[bold red]⛔ LỖI.[/bold red]")
-                    console.print("[bold yellow]⛔ Vui lòng thử lại[/bold yellow]")
-                    sleep(2)
-                    continue
-            elif service == 14: # Unlock w16 Engine
-                console.print("[bold cyan][%] Mở khóa động cơ W16[/bold cyan]: ", end=None)
-                if cpm.unlock_w16():
-                    console.print("[bold green]🎀THÀNH CÔNG [/bold green]")
-                    console.print("==================================")
-                    answ = Prompt.ask("[bold cyan]⛔ Bạn có muốn thoát không ?[/bold cyan]", choices=["y", "n"], default="n")
-                    if answ == "y": console.print(f"[bold yellow]🎀 Cảm ơn bạn đã sử dụng công cụ của chúng tôi[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
-                    else: continue
-                else:
-                    console.print("[bold red]⛔ LỖI.[/bold red]")
-                    console.print("[bold yellow]⛔ Vui lòng thử lại[/bold yellow]")
-                    sleep(2)
-                    continue
-            elif service == 15: # Unlock All Horns
-                console.print("[bold cyan][%] Mở khóa tất cả các còi[/bold cyan]: ", end=None)
-                if cpm.unlock_horns():
-                    console.print("[bold green]🎀THÀNH CÔNG [/bold green]")
-                    console.print("==================================")
-                    answ = Prompt.ask("[bold cyan]⛔ Bạn có muốn thoát không ?[/bold cyan]", choices=["y", "n"], default="n")
-                    if answ == "y": console.print(f"[bold yellow]🎀 Cảm ơn bạn đã sử dụng công cụ của chúng tôi[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
-                    else: continue
-                else:
-                    console.print("[bold red]⛔ LỖI.[/bold red]")
-                    console.print("[bold yellow]⛔ Vui lòng thử lại[/bold yellow]")
-                    sleep(2)
-                    continue
-            elif service == 16: # Disable Engine Damage
-                console.print("[bold cyan][%] Mở khóa Vô hiệu hóa thiệt hại[/bold cyan]: ", end=None)
-                if cpm.disable_engine_damage():
-                    console.print("[bold green]🎀THÀNH CÔNG [/bold green]")
-                    console.print("==================================")
-                    answ = Prompt.ask("[bold cyan]⛔ Bạn có muốn thoát không ?[/bold cyan]", choices=["y", "n"], default="n")
-                    if answ == "y": console.print(f"[bold yellow]🎀 Cảm ơn bạn đã sử dụng công cụ của chúng tôi[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
-                    else: continue
-                else:
-                    console.print("[bold red]⛔ LỖI.[/bold red]")
-                    console.print("[bold yellow]⛔ Vui lòng thử lại[/bold yellow]")
-                    sleep(2)
-                    continue
-            elif service == 17: # Unlimited Fuel
-                console.print("[bold cyan][%] Mở khóa nhiên liệu không giới hạn[/bold cyan]: ", end=None)
-                if cpm.unlimited_fuel():
-                    console.print("[bold green]🎀THÀNH CÔNG [/bold green]")
-                    console.print("==================================")
-                    answ = Prompt.ask("[bold cyan]⛔ Bạn có muốn thoát không ?[/bold cyan]", choices=["y", "n"], default="n")
-                    if answ == "y": console.print(f"[bold yellow]🎀 Cảm ơn bạn đã sử dụng công cụ của chúng tôi[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
-                    else: continue
-                else:
-                    console.print("[bold red]⛔ LỖI.[/bold red]")
-                    console.print("[bold yellow]⛔ Vui lòng thử lại[/bold yellow]")
-                    sleep(2)
-                    continue
-            elif service == 18: # Unlock House 3
-                console.print("[bold cyan][%] Mở khóa nhà 3[/bold cyan]: ", end=None)
-                if cpm.unlock_houses():
-                    console.print("[bold green]🎀THÀNH CÔNG [/bold green]")
-                    console.print("==================================")
-                    answ = Prompt.ask("[bold cyan]⛔ Bạn có muốn thoát không ?[/bold cyan]", choices=["y", "n"], default="n")
-                    if answ == "y": console.print(f"[bold yellow]🎀 Cảm ơn bạn đã sử dụng công cụ của chúng tôi[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
-                    else: continue
-                else:
-                    console.print("[bold red]⛔ LỖI.[/bold red]")
-                    console.print("[bold yellow]⛔ Vui lòng thử lại[/bold yellow]")
-                    sleep(2)
-                    continue
-            elif service == 19: # Unlock Smoke
-                console.print("[bold cyan][%] Mở khóa khói[/bold cyan]: ", end=None)
-                if cpm.unlock_smoke():
-                    console.print("[bold green]🎀THÀNH CÔNG [/bold green]")
-                    console.print("==================================")
-                    answ = Prompt.ask("[bold cyan]⛔ Bạn có muốn thoát không ?/bold cyan]", choices=["y", "n"], default="n")
-                    if answ == "y": console.print(f"[bold yellow]🎀 Cảm ơn bạn đã sử dụng công cụ của chúng tôi[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
-                    else: continue
-                else:
-                    console.print("[bold red]⛔ LỖI.[/bold red]")
-                    console.print("[bold yellow]⛔ Vui lòng thử lại[/bold yellow]")
-                    sleep(2)
-                    continue
-            elif service == 20: # Change Races Wins
-                console.print("[bold cyan][!] Chèn số lượng cuộc đua bạn giành chiến thắng[/bold cyan]")
-                amount = IntPrompt.ask("[bold][?] Số lượng[/bold]")
-                console.print("[bold cyan][%] Thay đổi dữ liệu của bạn[/bold cyan]: ", end=None)
-                if amount > 0 and amount <= 999:
-                    if cpm.set_player_wins(amount):
-                        console.print("[bold green]🎀THÀNH CÔNG [/bold green]")
-                        console.print("==================================")
-                        answ = Prompt.ask("[bold cyan]⛔ Bạn có muốn thoát không ?[/bold cyan]", choices=["y", "n"], default="n")
-                        if answ == "y": console.print(f"[bold yellow]🎀 Cảm ơn bạn đã sử dụng công cụ của chúng tôi[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
-                        else: continue
-                    else:
-                        console.print("[bold red]⛔ LỖI.[/bold red]")
-                        console.print("[bold yellow]⛔ Vui lòng thử lại[/bold yellow]")
-                        sleep(2)
-                        continue
-                else:
-                    console.print("[bold red]⛔ LỖI.[/bold red]")
-                    console.print("[bold yellow]⛔ Vui lòng thử lại[/bold yellow]")
-                    sleep(2)
-                    continue
-            elif service == 21: # Change Races Loses
-                console.print("[bold cyan][!] Chèn số lượng cuộc đua bạn thua[/bold cyan]")
-                amount = IntPrompt.ask("[bold][?] Số lượng[/bold]")
-                console.print("[bold cyan][%] Thay đổi dữ liệu của bạn[/bold cyan]: ", end=None)
-                if amount > 0 and amount <= 999:
-                    if cpm.set_player_loses(amount):
-                        console.print("[bold green]🎀THÀNH CÔNG [/bold green]")
-                        console.print("==================================")
-                        answ = Prompt.ask("[bold cyan]⛔ Bạn có muốn thoát không ?[/bold cyan]", choices=["y", "n"], default="n")
-                        if answ == "y": console.print(f"[bold yellow]🎀 Cảm ơn bạn đã sử dụng công cụ của chúng tôi[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
-                        else: continue
-                    else:
-                        console.print("[bold red]⛔ LỖI.[/bold red]")
-                        console.print("[bold yellow]⛔ Vui lòng thử lại[/bold yellow]")
-                        sleep(2)
-                        continue
-                else:
-                    console.print("[bold red]⛔ LỖI.[/bold red]")
-                    console.print("[bold yellow]⛔ Vui lòng thử lại[/bold yellow]")
-                    sleep(2)
-                    continue
-            elif service == 22: # Clone Account
-                console.print("[bold cyan]Vui lòng nhập chi tiết tài khoản[/bold cyan]:")
-                to_email = prompt_valid_value("[bold][?] Tài khoản gmail[/bold]", "Email", password=False)
-                to_password = prompt_valid_value("[bold][?] Mật khẩu[/bold]", "Password", password=False)
-                console.print("[bold cyan][%] Nhân bản tài khoản của bạn[/bold cyan]: ", end=None)
-                if cpm.account_clone(to_email, to_password):
-                    console.print("[bold green]🎀THÀNH CÔNG [/bold green]")
-                    console.print("==================================")
-                    answ = Prompt.ask("[bold cyan]⛔ Bạn có muốn thoát không ?[/bold cyan]", choices=["y", "n"], default="n")
-                    if answ == "y": console.print(f"[bold yellow]🎀 Cảm ơn bạn đã sử dụng công cụ của chúng tôi[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
-                    else: continue
-                else:
-                    console.print("[bold red]⛔ LỖI.[/bold red]")
-                    console.print("[bold yellow]⛔ Vui lòng thử lại[/bold yellow]")
-                    sleep(2)
-                    continue
-            else: continue
-            break
-        break
+                    console.print("================
